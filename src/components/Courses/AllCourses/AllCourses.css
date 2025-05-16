@@ -1,0 +1,591 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.all-courses-container {
+    background-color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Hero section */
+.courses-hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: white;
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: 
+        linear-gradient(135deg, #1e293b 0%, #0f172a 100%),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 20px 20px, 20px 20px;
+}
+
+.courses-hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.courses-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Floating shapes */
+.courses-hero .shape-1,
+.courses-hero .shape-2,
+.courses-hero .shape-3 {
+    position: absolute;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.courses-hero .shape-1 {
+    top: 20%;
+    left: 10%;
+    width: 60px;
+    height: 60px;
+    background: #4f46e5;
+    border-radius: 12px;
+    transform: rotate(45deg);
+    animation: float 8s ease-in-out infinite;
+}
+
+.courses-hero .shape-2 {
+    top: 60%;
+    right: 10%;
+    width: 40px;
+    height: 40px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.courses-hero .shape-3 {
+    bottom: 15%;
+    left: 20%;
+    width: 30px;
+    height: 30px;
+    background: #6366f1;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Particle dots */
+.courses-hero .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.courses-hero .particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.courses-hero .particle:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation: twinkle 4s infinite;
+}
+
+.courses-hero .particle:nth-child(2) {
+    top: 40%;
+    left: 40%;
+    animation: twinkle 6s infinite;
+}
+
+.courses-hero .particle:nth-child(3) {
+    top: 60%;
+    left: 80%;
+    animation: twinkle 8s infinite;
+}
+
+.courses-hero .particle:nth-child(4) {
+    top: 80%;
+    left: 10%;
+    animation: twinkle 5s infinite;
+}
+
+.courses-hero .particle:nth-child(5) {
+    top: 30%;
+    left: 70%;
+    animation: twinkle 7s infinite;
+}
+
+.courses-hero .particle:nth-child(6) {
+    top: 70%;
+    left: 30%;
+    animation: twinkle 9s infinite;
+}
+
+.courses-hero .particle:nth-child(7) {
+    top: 10%;
+    left: 90%;
+    animation: twinkle 4.5s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.5);
+    }
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    opacity: 0.8;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(to right, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #94a3b8;
+}
+
+/* Simple Courses Grid */
+.courses-simple-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.course-simple-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.course-simple-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-simple-image {
+    position: relative;
+    height: 200px;
+}
+
+.course-simple-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-simple-price {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.course-simple-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.course-simple-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.course-simple-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.course-simple-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.course-simple-button:hover {
+    background: #1d4ed8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .courses-simple-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .courses-simple-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .courses-simple-container {
+        padding: 40px 20px;
+    }
+}
+
+/* Coupon section */
+.coupon-container {
+    display: flex;
+    margin-top: 30px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.coupon-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.coupon-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0 24px;
+    border-radius: 0 8px 8px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.coupon-button:hover {
+    background: #1d4ed8;
+}
+
+.discount-badge {
+    background: #10b981;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-top: 16px;
+    display: inline-block;
+}
+
+/* Course price with discount */
+.original-price {
+    text-decoration: line-through;
+    opacity: 0.7;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* Course buttons */
+.course-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.add-to-cart-button, 
+.checkout-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.add-to-cart-button::before, 
+.checkout-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.add-to-cart-button:hover::before, 
+.checkout-button:hover::before {
+    left: 100%;
+}
+
+.add-to-cart-button {
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: white;
+    flex: 1;
+    min-width: 120px;
+    border: none;
+}
+
+.add-to-cart-button:hover {
+    background: linear-gradient(135deg, #4338ca, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.add-to-cart-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(59, 130, 246, 0.2);
+}
+
+.checkout-button {
+    background: white;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    min-width: 100px;
+}
+
+.checkout-button:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.checkout-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 768px) {
+    .course-buttons {
+        flex-direction: column;
+    }
+    
+    .add-to-cart-button, 
+    .checkout-button {
+        width: 100%;
+    }
+}
+
+/* Dark mode styles for AllCourses */
+body.dark-mode .all-courses-container {
+    background-color: #121212;
+}
+
+body.dark-mode .courses-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    background-image: 
+        linear-gradient(135deg, #0f172a 0%, #020617 100%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 20px 20px, 20px 20px;
+}
+
+body.dark-mode .hero-title {
+    background: linear-gradient(to right, #fff, #94a3b8);
+}
+
+body.dark-mode .hero-subtitle {
+    color: #94a3b8;
+}
+
+body.dark-mode .course-simple-card {
+    background: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .course-simple-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .course-simple-title {
+    color: #f5f5f5;
+}
+
+body.dark-mode .course-simple-subtitle {
+    color: #94a3b8;
+}
+
+body.dark-mode .back-button {
+    color: #f5f5f5;
+}
+
+body.dark-mode .course-simple-price {
+    background: #3b82f6;
+}
+
+/* Dark mode button styles */
+body.dark-mode .add-to-cart-button {
+    background: linear-gradient(135deg, #4338ca, #2563eb);
+}
+
+body.dark-mode .add-to-cart-button:hover {
+    background: linear-gradient(135deg, #3730a3, #1d4ed8);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+body.dark-mode .enroll-button {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+body.dark-mode .enroll-button:hover {
+    background: linear-gradient(135deg, #047857, #065f46);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Glowing orb effect */
+.courses-hero .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.courses-hero .orb-1 {
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: #4f46e5;
+    animation: pulse 8s ease-in-out infinite alternate;
+}
+
+.courses-hero .orb-2 {
+    bottom: -150px;
+    left: -100px;
+    width: 350px;
+    height: 350px;
+    background: #8b5cf6;
+    animation: pulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(1.1);
+    }
+}
+
+body.dark-mode .courses-hero .orb-1 {
+    background: #4338ca;
+}
+
+body.dark-mode .courses-hero .orb-2 {
+    background: #6d28d9;
+}
+
+body.dark-mode .courses-hero .shape-1,
+body.dark-mode .courses-hero .shape-2,
+body.dark-mode .courses-hero .shape-3 {
+    opacity: 0.15;
+}
+
+body.dark-mode .courses-hero .particle {
+    background: rgba(255, 255, 255, 0.15);
+}

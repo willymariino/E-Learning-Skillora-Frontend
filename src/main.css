@@ -1,0 +1,352 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* css used multiple times */
+
+
+/* button */
+/*  button layout */
+
+.button-flex {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+}
+
+.btn-fill {
+  background-color: #3675ff !important;
+  border: 1px solid #3675ff !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 15px 35px !important;
+  border-radius: 10px !important;
+  transition: 0.3s !important;
+}
+
+.btn-danger {
+  background-color: #ff3636 !important;
+  border: 1px solid #ff3636 !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 15px 35px !important;
+  border-radius: 10px !important;
+  transition: 0.3s !important;
+}
+
+.btn-success {
+  background-color: #8aff2a !important;
+  border: 1px solid #8aff2a !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 15px 35px !important;
+  border-radius: 10px !important;
+  transition: 0.3s !important;
+}
+
+.btn-success:hover {
+  background-color: #56c822 !important;
+}
+
+.btn-danger:hover {
+  background-color: #d32323 !important;
+}
+
+.btn-fill:hover {
+  background-color: #0c49cc !important;
+}
+
+
+.btn-outline {
+  background-color: transparent !important;
+  color: #3675ff !important;
+  border: 1px solid #3675ff !important;
+  padding: 15px 35px !important;
+  border-radius: 10px !important;
+  transition:  0.3s !important;
+}
+
+.btn-outline:hover {
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+  transition: 0.3s !important;
+}
+
+/* layout */
+
+.container-flex {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+/* center-text */
+
+.text-center {
+  text-align: center;
+}
+
+/* style */
+
+.highlight {
+  background: #b7cfff;
+}
+
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.block {
+  animation: appear linear 10s;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+
+/* Dark Mode Styles - Comprehensive and Enhanced */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f5f5f5 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Styles */
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode card styles */
+body.dark-mode .course-simple-card,
+body.dark-mode .course-card,
+body.dark-mode .category-card,
+body.dark-mode .popular-course-card,
+body.dark-mode .review-card,
+body.dark-mode .cart-item,
+body.dark-mode .checkout-card {
+  background-color: #1e1e1e !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .course-simple-title,
+body.dark-mode .course-title,
+body.dark-mode .category-title,
+body.dark-mode .popular-course-title,
+body.dark-mode .review-title,
+body.dark-mode .cart-title,
+body.dark-mode .checkout-title {
+  color: #f5f5f5 !important;
+}
+
+body.dark-mode .course-simple-subtitle,
+body.dark-mode .course-subtitle,
+body.dark-mode .category-subtitle,
+body.dark-mode .popular-course-subtitle,
+body.dark-mode .review-subtitle,
+body.dark-mode .cart-subtitle,
+body.dark-mode .checkout-subtitle {
+  color: #a1a1aa !important;
+}
+
+/* Dark mode sections */
+body.dark-mode .popular-courses-section,
+body.dark-mode .category-section,
+body.dark-mode .review-section,
+body.dark-mode .about-section,
+body.dark-mode .contact-section,
+body.dark-mode .cart-container,
+body.dark-mode .checkout-container,
+body.dark-mode .all-courses-container,
+body.dark-mode .hero-section {
+  background-color: #121212 !important;
+}
+
+/* Dark mode hero sections */
+body.dark-mode .hero-section,
+body.dark-mode .courses-hero,
+body.dark-mode .about-hero,
+body.dark-mode .contact-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%) !important;
+}
+
+/* Dark mode headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .title-popular,
+body.dark-mode .title-category,
+body.dark-mode .title-about,
+body.dark-mode .title-contact,
+body.dark-mode .title-review {
+  color: #f5f5f5 !important;
+}
+
+/* Dark mode form elements */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .form-control,
+body.dark-mode .search-input,
+body.dark-mode .input input {
+  background-color: transparent !important;
+  color: #f5f5f5 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus,
+body.dark-mode .form-control:focus,
+body.dark-mode .search-input:focus,
+body.dark-mode .input input:focus {
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder,
+body.dark-mode select::placeholder,
+body.dark-mode .search-input::placeholder,
+body.dark-mode .input input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Dark mode search container */
+body.dark-mode .search-container,
+body.dark-mode .input {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dark mode search button */
+body.dark-mode .search-button {
+  background-color: #3b82f6 !important;
+  color: #f5f5f5 !important;
+}
+
+body.dark-mode .search-button:hover {
+  background-color: #2563eb !important;
+}
+
+/* Dark mode links */
+body.dark-mode a {
+  color: #60a5fa !important;
+}
+
+body.dark-mode a:hover {
+  color: #93c5fd !important;
+}
+
+/* Dark mode buttons */
+body.dark-mode .btn-fill,
+body.dark-mode .btn-primary,
+body.dark-mode .add-to-cart-button {
+  background: linear-gradient(135deg, #4338ca, #2563eb) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+body.dark-mode .btn-success,
+body.dark-mode .enroll-button {
+  background: linear-gradient(135deg, #059669, #047857) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+body.dark-mode .btn-danger {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+body.dark-mode .btn-outline {
+  background-color: transparent !important;
+  color: #60a5fa !important;
+  border-color: #60a5fa !important;
+}
+
+body.dark-mode .btn-outline:hover {
+  background-color: rgba(96, 165, 250, 0.1) !important;
+}
+
+/* Dark mode footer */
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode footer a {
+  color: #a1a1aa;
+}
+
+body.dark-mode footer a:hover {
+  color: #f5f5f5;
+}
+
+/* Dark mode toast notifications */
+body.dark-mode .Toastify__toast {
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+}
+
+/* Dark mode for Get in Touch button */
+body.dark-mode .btn-nav {
+  background: linear-gradient(135deg, #4338ca, #2563eb);
+  color: #ffffff;
+}
+
+/* Dark mode for About page */
+body.dark-mode .about-content {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .about-card {
+  background-color: #2d2d2d;
+  border-color: #3d3d3d;
+}
+
+/* Dark mode for reviews */
+body.dark-mode .review-card {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .review-text {
+  color: #d1d5db;
+}
+
+body.dark-mode .review-author {
+  color: #f5f5f5;
+}
+
+body.dark-mode .review-stars {
+  color: #f59e0b;
+}
+
+/* Dark mode for contact form */
+body.dark-mode .contact-form {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .contact-info {
+  background-color: #2d2d2d;
+}
